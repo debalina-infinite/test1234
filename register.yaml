@@ -1,0 +1,9 @@
+
+---
+- hosts: linux
+  tasks:
+  - name: print command output
+    command: echo "i am in ansible training"
+    register: cmdoutput
+  - debug: msg="standard output={{cmdoutput.stdout}}"
+  - debug: msg="standard error={{cmdoutput.stderr}}"
